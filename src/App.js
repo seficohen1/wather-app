@@ -3,6 +3,7 @@ import { WeatherContext } from './contexts/weather.context';
 import CurrentTemp from './components/current-temp/CurrentTemp.jsx';
 import SearchBar from './components/search-bar/SearchBar.jsx';
 import AdditionalInfo from './components/addional-info/AdditionalInfo';
+import WeatherVid from './components/weather-vid/WeatherVid';
 function App() {
   const API_KEY = 'b6a311958e98b633b6cad1f3de939c35';
   const [weather, setWeather] = useState({
@@ -23,7 +24,6 @@ function App() {
       try {
         const respnse = await fetch(url);
         const data = await respnse.json();
-        console.log(data);
         setWeather({
           temp: Math.floor(data.main.temp),
           feelsLike: Math.floor(data.main.feels_like),
@@ -44,6 +44,7 @@ function App() {
   return (
     <div className="App">
       <WeatherContext.Provider value={{ weather, setWeather, city, setCity }}>
+        <WeatherVid description={weather.description} />
         <CurrentTemp />
         <AdditionalInfo
           feelsLike={weather.feelsLike}

@@ -19,7 +19,7 @@ button {
   position: absolute;
   left: 380px;
   top: 10px;
-  background-color: white;
+  background-color: whitesmoke;
   border: none;
   cursor: pointer;
 }
@@ -42,6 +42,6 @@ and (max-device-width : 480px)
   }
 
   button {
-    left: 190px;
+    left: 180px;
   }
 }  
