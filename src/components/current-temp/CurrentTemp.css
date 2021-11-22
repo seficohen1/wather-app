@@ -1,0 +1,40 @@
+.current-temp-container {
+  width: 100% ;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: flex-start;
+  background-color: brown;
+  color: aliceblue;
+
+  
+}
+
+.city-info-temp {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: stretch;
+  margin-left: 10px;
+  opacity: 0.8;
+  
+ 
+}
+
+.city-info-temp p {
+  font-size: 70px;
+}
+
+.weather-description {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: center;
+  transform-origin: 0;
+  transform: rotate(270deg);
+  letter-spacing: 3px;
+  font-size: 20px;
+  opacity: 0.8;
+
+
+
+}

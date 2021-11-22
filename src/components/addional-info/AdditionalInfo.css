@@ -1,0 +1,58 @@
+.addional-info-container {
+  width: 90%;
+  display: flex;
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.5);;
+
+  position: absolute;
+  left: 80px;
+  top: 720px;
+  padding: 10px;
+  border-radius: 10px;
+  height: 70px;
+  color: aliceblue;
+  
+}
+
+.info {
+  margin-right: 10px;
+  width: 30%;
+  position: relative;
+  border-right: 1px solid rgba(255, 255, 255, 0.281);;
+  align-content: center;
+}
+
+.info:last-of-type {
+  border: none;
+}
+
+.info span {
+  position: absolute; 
+  left: 2px;
+  right: 40px;
+  
+}
+.info p {
+  position: absolute;
+  bottom: 2px;
+  left: 205px;
+}
+
+/* For 1024 Resolution */  
+/* For 480 Resolution */  
+@media only screen   
+and (min-device-width : 320px)   
+and (max-device-width : 480px)  
+{ .addional-info-container {
+  width: 80%;
+  position: absolute;
+  left: 25px;
+  top: 700px;
+  padding: 10px;
+  height: 70px;
+}
+.info p {
+  left: 4px;
+}
+
+}  
