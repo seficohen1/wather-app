@@ -26,7 +26,7 @@ function App() {
           description: data.weather[0].main,
         });
       } catch (error) {
-        console.log(error);
+        alert(error);
       }
     };
     fetchWeather();
