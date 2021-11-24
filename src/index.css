@@ -1,13 +1,40 @@
 body {
   margin: 0;
+  
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Shippori Antique', sans-serif;
-  background-color: grey;
+  
   position: relative;
 }
 
+.App {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: bottom;
+  
+  background-image: linear-gradient(to top, rgba(0,0,0, 0.2), rgba(0, 0,0, 0.75));
+
+
+}
+
+.App.cold {
+  background-image: url(./assets/cold.jpg);
+  transition: all 0.4 ease-out;
+
+}
+
+.App.warm {
+  background-image: url(./assets/warm.jpg);
+  transition: 0.4 ease-out;
+  
+}
+main {
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, rgba(0,0,0, 0.2), rgba(0, 0,0, 0.30));
+  
+}
 

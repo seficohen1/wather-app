@@ -1,12 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './SearchBar.css';
-import { WeatherContext } from '../../contexts/weather.context.js';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 let searchedCity;
 
-const SearchBar = () => {
-  const { city, setCity } = useContext(WeatherContext);
+const SearchBar = ({ setCity, city }) => {
   const handleChange = (e) => {
     if (e.code === 'Enter') {
       searchedCity = e.target.value;
@@ -14,7 +13,6 @@ const SearchBar = () => {
     }
     searchedCity = e.target.value;
   };
-
   const getCity = () => {
     !searchedCity || city.code === '404'
       ? alert('Please try again')

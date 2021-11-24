@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { WeatherContext } from './contexts/weather.context';
+import './App.css';
+
 import CurrentTemp from './components/current-temp/CurrentTemp.jsx';
 import SearchBar from './components/search-bar/SearchBar.jsx';
 import AdditionalInfo from './components/addional-info/AdditionalInfo';
-import WeatherVid from './components/weather-vid/WeatherVid';
+
 function App() {
   const API_KEY = 'b6a311958e98b633b6cad1f3de939c35';
   const [weather, setWeather] = useState({
@@ -18,7 +19,6 @@ function App() {
   });
   const [city, setCity] = useState('madrid');
   useEffect(() => {
-    console.log(city);
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${API_KEY}&units=metric`;
     const fetchWeather = async () => {
       try {
@@ -40,19 +40,19 @@ function App() {
     };
     fetchWeather();
   }, [city]);
+  const cold = weather.temp < 10 ? true : false;
 
   return (
-    <div className="App">
-      <WeatherContext.Provider value={{ weather, setWeather, city, setCity }}>
-        <WeatherVid description={weather.description} />
-        <CurrentTemp />
+    <div className={`App ${cold ? 'cold' : 'warm'}`}>
+      <main>
+        <CurrentTemp weather={weather} />
         <AdditionalInfo
           feelsLike={weather.feelsLike}
           high={weather.tempMax}
           low={weather.tempMin}
         />
-        <SearchBar />
-      </WeatherContext.Provider>
+        <SearchBar setCity={setCity} city={city} />
+      </main>
     </div>
   );
 }

@@ -1,15 +1,15 @@
-import React, { useContext } from 'react';
-import { WeatherContext } from '../../contexts/weather.context';
+import React from 'react';
+
 import './CurrentTemp.css';
 
-const CurrentTemp = () => {
-  const { weather } = useContext(WeatherContext);
-
-  const { city, description, temp } = weather;
+const CurrentTemp = ({ weather }) => {
+  const { city, country, temp, description } = weather;
   return (
     <div className="current-temp-container">
       <div className="city-info-temp">
-        <h3>{city}</h3>
+        <h3>
+          {city}, {country}
+        </h3>
         <p>{temp} &#8451;</p>
       </div>
       <div className="weather-description">
