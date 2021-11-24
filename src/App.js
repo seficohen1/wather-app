@@ -6,21 +6,12 @@ import SearchBar from './components/search-bar/SearchBar.jsx';
 import AdditionalInfo from './components/addional-info/AdditionalInfo';
 
 function App() {
-  const API_KEY = 'b6a311958e98b633b6cad1f3de939c35';
-  const [weather, setWeather] = useState({
-    temp: null,
-    feelsLike: null,
-    tempMax: null,
-    tempMin: null,
-    city: '',
-    country: '',
-    icon: '',
-    description: '',
-  });
+  const [weather, setWeather] = useState({});
   const [city, setCity] = useState('madrid');
+
   useEffect(() => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${API_KEY}&units=metric`;
     const fetchWeather = async () => {
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`;
       try {
         const respnse = await fetch(url);
         const data = await respnse.json();

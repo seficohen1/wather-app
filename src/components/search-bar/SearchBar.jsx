@@ -18,7 +18,6 @@ const SearchBar = ({ setCity, city }) => {
       ? alert('Please try again')
       : setCity(searchedCity);
   };
-  console.log(city);
   return (
     <div className="search-bar-container">
       <div className="search">
