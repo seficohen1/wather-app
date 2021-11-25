@@ -4,12 +4,11 @@ import './App.css';
 import CurrentTemp from './components/current-temp/CurrentTemp.jsx';
 import SearchBar from './components/search-bar/SearchBar.jsx';
 import AdditionalInfo from './components/addional-info/AdditionalInfo';
+const API_KEY = 'b6a311958e98b633b6cad1f3de939c35';
 
 function App() {
   const [weather, setWeather] = useState({});
   const [city, setCity] = useState('madrid');
-  const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
-
   useEffect(() => {
     const fetchWeather = async () => {
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${API_KEY}&units=metric`;
