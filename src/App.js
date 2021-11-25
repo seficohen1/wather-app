@@ -8,10 +8,10 @@ import AdditionalInfo from './components/addional-info/AdditionalInfo';
 function App() {
   const [weather, setWeather] = useState({});
   const [city, setCity] = useState('madrid');
-  const API_KEY = '3a060cc0b1e37c29cafd1743351ea7aa';
+
   useEffect(() => {
     const fetchWeather = async () => {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${API_KEY}&units=metric`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`;
       try {
         const respnse = await fetch(url);
         const data = await respnse.json();
